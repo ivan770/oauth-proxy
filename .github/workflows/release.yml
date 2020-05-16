@@ -1,0 +1,19 @@
+name: Release
+
+on:
+  push:
+    tags:
+    - 'v*'
+
+jobs:
+  linux:
+    name: Build Linux
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Build
+      run: cargo build --release --verbose
+    - uses: actions/upload-artifact@v1
+      with:
+        name: linux
+        path: target/release/oauth-proxy
