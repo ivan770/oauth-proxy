@@ -1,0 +1,12 @@
+[package]
+name = "oauth-proxy"
+version = "1.0.0"
+authors = ["ivan770 <leshenko.ivan770@gmail.com>"]
+edition = "2018"
+
+[dependencies]
+tide = "0.8"
+dotenv = "0.15"
+async-std = { version = "1.5", features = ["attributes"] }
+oauth2 = { version = "3.0.0-alpha.9", features = ["futures-03", "reqwest-010"], default-features = false }
+serde = "1.0"
